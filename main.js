@@ -10,7 +10,7 @@ function start()
 recognition.onresult = function(event)
 {
     console.log(event);
-    Content = event.results[0][0].transcript;
+    var Content = event.results[0][0].transcript;
     console.log(Content);
     if(Content=="selfie")
     {
@@ -21,7 +21,7 @@ recognition.onresult = function(event)
 
 function speak()
 {
-    synth = window.speechSynthesis;
+    var synth = window.speechSynthesis;
     Webcam.attach(camera);
     
     setTimeout(function()
@@ -29,7 +29,7 @@ function speak()
         imgId = "selfie1";
         takeSelfie();
         speakData = "tirando a sua selfie em 5 segundos";
-        utterThis = new SpeechSynthesisUtterance(speakData);
+        var utterThis = new SpeechSynthesisUtterance(speakData);
         synth.speak(utterThis);
 
     }, 5000);
@@ -39,7 +39,7 @@ function speak()
         imgId = "selfie2";
         takeSelfie();
         speakData = "tirando a sua selfie em 5 segundos";
-        utterThis = new SpeechSynthesisUtterance(speakData);
+        var utterThis = new SpeechSynthesisUtterance(speakData);
         synth.speak(utterThis);
 
     }, 10000);
@@ -49,7 +49,7 @@ function speak()
         imgId = "selfie3";
         takeSelfie();
         speakData = "tirando a sua selfie em 5 segundos";
-        utterThis = new SpeechSynthesisUtterance(speakData);
+        var utterThis = new SpeechSynthesisUtterance(speakData);
         synth.speak(utterThis);
 
     }, 15000);
