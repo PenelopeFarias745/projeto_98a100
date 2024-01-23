@@ -1,6 +1,6 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
 recognition = new SpeechRecognition();
-Content;
+var Content;
 
 function start()
 {
