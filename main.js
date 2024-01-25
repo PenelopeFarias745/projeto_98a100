@@ -1,10 +1,10 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
 recognition = new SpeechRecognition();
-var Content;
 
 function start()
 {
     recognition.start();
+    Webcam.attach(camera);
 }
 
 recognition.onresult = function(event)
@@ -22,7 +22,6 @@ recognition.onresult = function(event)
 function speak()
 {
     var synth = window.speechSynthesis;
-    Webcam.attach(camera);
     
     setTimeout(function()
     {
@@ -70,15 +69,15 @@ function takeSelfie()
     {
         if(imgId=="selfie1")
         {
-            document.getElementById("result1").innerHTML = '<img id="selfie1" src"'+data_uri+'"/>';
+            document.getElementById("result1").innerHTML = '<img id="selfie1" src="'+data_uri+'"/>';
         }
         if(imgId=="selfie2")
         {
-            document.getElementById("result2").innerHTML = '<img id="selfie2" src"'+data_uri+'"/>';
+            document.getElementById("result2").innerHTML = '<img id="selfie2" src="'+data_uri+'"/>';
         }
         if(imgId=="selfie3")
         {
-            document.getElementById("result3").innerHTML = '<img id="selfie3" src"'+data_uri+'"/>';
+            document.getElementById("result3").innerHTML = '<img id="selfie3" src="'+data_uri+'"/>';
         }
     });
 }
